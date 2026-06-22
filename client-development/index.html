@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Client development - Jellyfin Clients</title>
+    <link rel="stylesheet" href="https://jfhacks.github.io/assets/datatables/datatables.min.css">
+    <link rel="stylesheet" href="https://jfhacks.github.io/assets/main.css">
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-dark bg-dark border-bottom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://jfhacks.github.io">Jellyfin Clients</a>
+        <span class="text-muted small">personal jellyfin client test/state list</span>
+      </div>
+    </nav>
+
+    <main class="container-fluid py-4">
+      
+<div class="container-md">
+    <div class="mt-3"><h1 id="client-development">Client development</h1>
+<h2 id="auth">Auth</h2>
+<p>Do not use legacy auth. Jellyfin started the switch years about, but</p>
+<p>Here Gist about Jellyfin auth from jellyfin core developer<br>
+<a rel="external" href="https://gist.github.com/nielsvanvelzen/ea047d9028f676185832e51ffaf12a6f">https://gist.github.com/nielsvanvelzen/ea047d9028f676185832e51ffaf12a6f</a></p>
+<p><strong>TLDR</strong><br>
+Header token &gt; ApiKey parameter (discouraged) &gt; <del>api_key/other header (dead)</del></p>
+<h2 id="images">Images</h2>
+<h3 id="jellyfin-images-api">Jellyfin Images API</h3>
+<p>Image endpoint has 3 sets of options. Sending a single side will always result in image in original ratio.</p>
+<h4 id="width-height"><code>width/height</code></h4>
+<p>Do not use! Those argument together won't respect the ratio of image and stretches it. Also it will upscale images.</p>
+<h4 id="fillwidth-fillheight"><code>fillWidth/fillHeight</code></h4>
+<p>Best for logos. Logo has defined area e.g. <code>600x400</code> and using <code>fillWidth=600&amp;fillHeight=400</code> behave like <code>object-fit: contain</code>, so no side will be larger as requested size</p>
+<h4 id="maxwidth-maxheight"><code>maxWidth/maxHeight</code></h4>
+<p>Good for posters and so on. Images with closely predictable ratio and a area needs to be filled. Similar to  <code>object-fit: cover</code>.  Logo has defined area e.g. <code>400x600</code> and using <code>maxWidth=400&amp;maxHeight=600</code> and image is <code>4000x7000</code> will return a image with size <code>400x700</code>.</p>
+<p>Issue with <code>Logo</code> and <code>max</code> can be the ratio. e.g. 20:1 logo and <code>600x400</code> will result in image size of <code>8000x400</code> (no upscale).</p>
+<h4 id="quality">Quality</h4>
+<p>This is always a bit complicated depending on display, user and so on. A well sized image will be small, so a high quality is often beneficial. I would never go below 80, except on HighDPI (<code>dpr</code>), more pixel in lower quality will look better compared to 100% quality and upscaled. Small setting with few options can help and user can decide on eyesight and device.</p>
+<h4 id="format">Format</h4>
+<p>Jellyfin supports multiple formats best for a lot of use cases is <code>webp</code>, because it has transparency. It can be converted from PNG and JPEG. Modern formats like JXL or AVIF are not supported. Always nice if supported formats by client are send as Accept header, so users can use a dynamic proxy and cen get benefit of JXL and so on.</p>
+<h4 id="size">Size</h4>
+<p>Best calculate the needed image size and also <code>dpr</code>, because in it will add up especially in listing</p>
+<h4 id="cache-busting">Cache busting</h4>
+<p>Jellyfin has <code>tag</code> in API response and it will change after an image gets replaced in Jellyfin. Some use a cache on server side as well, so tag should be used, so URL changes.</p>
+<h4 id="unauthenticated">Unauthenticated</h4>
+<p>Images are unauthenticated and can be accedded with UUID, so no reason to sen <code>ApiKey</code> that ends up in access log</p>
+</div>
+</div>
+
+    </main>
+
+    <footer class="text-center text-muted py-3">
+        <a href="https://jfhacks.github.io/schema">Schema</a> //
+        <a href="https://jfhacks.github.io/client-development">Client development</a> //
+        Maintained on GitHub for now
+    </footer>
+  </body>
+</html>

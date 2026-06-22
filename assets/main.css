@@ -1,0 +1,9 @@
+/* Prefer Bootstrap variables; apply dark-theme overrides when needed */
+:root {
+    --dtr-control-triangle_size: 6px;
+    --dtr-control-triangle_color: #fff;
+}
+/* Optional: make DataTables respect nowrap class if you use it */
+table td {
+    white-space: nowrap;
+}

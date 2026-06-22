@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Schema - Jellyfin Clients</title>
+    <link rel="stylesheet" href="https://jfhacks.github.io/assets/datatables/datatables.min.css">
+    <link rel="stylesheet" href="https://jfhacks.github.io/assets/main.css">
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-dark bg-dark border-bottom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://jfhacks.github.io">Jellyfin Clients</a>
+        <span class="text-muted small">personal jellyfin client test/state list</span>
+      </div>
+    </nav>
+
+    <main class="container-fluid py-4">
+      
+<div class="container-md">
+    <h2>Schema</h2>
+
+    <div class="mt-3"><p>Fields that are currently supported and can be output.</p>
+</div>
+    <dl style="max-width: 50rem">
+             
+        <dt>Platforms</dt>
+        <dd><p>Supported platforms - only Web, Linux, Android and WebOS are supported</p>
+</dd>
+          
+        <dt>Version</dt>
+        <dd><p>Tested version, because FOSS often improves</p>
+</dd>
+          
+        <dt>Type</dt>
+        <dd><p>Player type (music and/or video)</p>
+</dd>
+          
+        <dt>Development</dt>
+        <dd><p>Developed by single dev (often rapid progress, but will get quite after a while) or shared maintainer ship</p>
+</dd>
+          
+        <dt>Language</dt>
+        <dd><p>Language used</p>
+</dd>
+          
+        <dt>License</dt>
+        <dd><p>License of code</p>
+</dd>
+          
+        <dt>State</dt>
+        <dd><p><strong>PERSONAL opinion</strong> about state, bugs/stable or feature set of an client</p>
+</dd>
+          
+        <dt>Modern auth</dt>
+        <dd><p>Legacy auth will be behind a config flag in v12 and beak all or parts of client communication</p>
+</dd>
+          
+        <dt>Images</dt>
+        <dd><p>A lot of clients load images to large, sometimes small, or skip any size info and get original image. Quality is bind to size or cache busting tag is missing</p>
+</dd>
+          
+        <dt>Library Management</dt>
+        <dd><p>Abel to maintain server e.g. adding images, adjust meta data</p>
+</dd>
+          
+        <dt>Filter</dt>
+        <dd><p>Filters like genre and tags</p>
+</dd>
+          
+        <dt>Filter v2</dt>
+        <dd><p>New endpoint for genres and also language based filters</p>
+</dd>
+          
+        <dt>Mixed library</dt>
+        <dd><p>Jellyfin has mixed library of shows and movies</p>
+</dd>
+          
+        <dt>Player used</dt>
+        <dd><p>Abel to maintain server e.g. adding images, adjust meta data</p>
+</dd>
+          
+        <dt>Full ASS support</dt>
+        <dd><p>ASS subtitle have a lot of features and some subtitles are large and complex</p>
+</dd>
+          
+        <dt>Anti-features</dt>
+        <dd><p>Things you often don't want e.g. tracking</p>
+</dd>
+          
+        <dt>HTTP&#x2F;3</dt>
+        <dd><p>HTTP/3 is unsupported, reasons are often the used library or wrapper and mobile clients benifit from UDP</p>
+</dd>
+          
+        <dt>Accept Header</dt>
+        <dd><p>Accept header wills end all supported image formats to the server on request. Dynamic imgproxy can select prefered/best format</p>
+</dd>
+         
+    </dl>
+</div>
+
+    </main>
+
+    <footer class="text-center text-muted py-3">
+        <a href="https://jfhacks.github.io/schema">Schema</a> //
+        <a href="https://jfhacks.github.io/client-development">Client development</a> //
+        Maintained on GitHub for now
+    </footer>
+  </body>
+</html>
