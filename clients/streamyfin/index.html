@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Jellyfin desktop - Jellyfin Clients</title>
+    <title>Streamyfin - Jellyfin Clients</title>
     <link rel="stylesheet" href="https://jfhacks.github.io/assets/datatables/datatables.min.css">
     <link rel="stylesheet" href="https://jfhacks.github.io/assets/main.css">
   </head>
@@ -21,13 +21,16 @@
 <!-- prettier-ignore -->
 
 <div class="container-md">
-    <h2>Jellyfin desktop
+    <h2>Streamyfin
+        
+        <a class="btn btn-outline-secondary btn-sm ms-2" href="https:&#x2F;&#x2F;github.com&#x2F;streamyfin&#x2F;streamyfin">Code</a>
          
+        <a class="btn btn-outline-secondary btn-sm ms-2" href="https:&#x2F;&#x2F;streamyfin.app">Web</a>
+        
     </h2>
 
     
-        <p>Wrapper for offical web client and rewrite is prealpha, working QT6 is archived</p>
-
+        
     
 
      
@@ -38,26 +41,34 @@
                    
                 <dt>Platforms</dt>
                   
-                <dd class="badge bg-secondary me-1">linux</dd>
+                <dd class="badge bg-secondary me-1">android</dd>
                        
                 <dt>Version</dt>
-                         
+                  
+                <dd class="badge bg-secondary me-1">develop</dd>
+                       
                 <dt>Type</dt>
-                         
+                  
+                <dd class="badge bg-secondary me-1">video</dd>
+                
+                <dd class="badge bg-secondary me-1">music</dd>
+                       
                 <dt>Development</dt>
                   
                 <dd class="badge bg-secondary me-1">org</dd>
                        
                 <dt>Language</dt>
-                         
+                  
+                <dd class="badge bg-secondary me-1">react native</dd>
+                       
                 <dt>License</dt>
-                                                
+                  
+                <dd class="badge bg-secondary me-1">MPL-2.0</dd>
+                                              
                 <hr>
                                                  
                 <dt>Anti-features</dt>
-                  
-                <dd class="badge bg-secondary me-1">broken-software</dd>
-                          
+                            
             </div>
         </div>
         <div class="card border-dark mb-3 col-sm-6 mb-3 mb-sm-0">
@@ -66,19 +77,25 @@
                                
                 <dt>State</dt>
                   
-                <dd class="badge bg-secondary me-1">broken</dd>
+                <dd class="badge bg-secondary me-1">mixed</dd>
                        
                 <dt>Modern auth</dt>
                  
-                <dd><dd class="badge text-bg-warning me-1">false</dd></dd>
+                <dd><dd class="badge bg-success me-1">yes</dd></dd>
                       
                 <dt>Images</dt>
-                                 
+                  
+                <dd class="badge bg-secondary me-1">mixed</dd>
+                   
+                <blockquote>Logos are to small (height), Poster to large (laods 1000 width in 3 col layout on phone display - seems static)</blockquote>
+                            
                 <dt>Player used</dt>
-                         
+                  
+                <dd class="badge bg-secondary me-1">mpv</dd>
+                       
                 <dt>Full ASS support</dt>
                  
-                <dd><dd class="badge text-bg-warning me-1">false</dd></dd>
+                <dd><dd class="badge bg-success me-1">yes</dd></dd>
                         
                 <dt>HTTP&#x2F;3</dt>
                  
@@ -100,7 +117,7 @@
                       
                 <dt>Filter</dt>
                  
-                <dd><dd class="badge text-bg-warning me-1">false</dd></dd>
+                <dd><dd class="badge bg-success me-1">yes</dd></dd>
                       
                 <dt>Filter v2</dt>
                  
@@ -108,13 +125,20 @@
                       
                 <dt>Mixed library</dt>
                  
-                <dd><dd class="badge text-bg-warning me-1">false</dd></dd>
+                <dd><dd class="badge bg-success me-1">yes</dd></dd>
                                
             </div>
         </div>
         <div class="card border-dark mb-3 col-sm-6 mb-3 mb-sm-0">
             <div class="card-header">Notes</div>
-            <div class="card-body"><p>A lot of things are jellyfin web, that gets wrapped, and wrapping part has so many issue compared to old archived QT6 based on. It is complies or starts (without window title) it should have most features of jellyfin-web minus e.g. http3 because that depends on browser and seems to be disabled.</p>
+            <div class="card-body"><p>Works but a bit buggy</p>
+<ul>
+<li>Long press actions are blinding (light on dark mode)</li>
+<li>No way to close the music player, except starting a video and it overlays content (no space on bottom while browsing)</li>
+<li>Cached images use blurhash and fade over (show the cached image - needs no blurred canvas)</li>
+<li>Downloads won't show all downloads (music and single episodes)</li>
+<li>On scrolling the image disappears and appears again</li>
+</ul>
 
             </div>
         </div>

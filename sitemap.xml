@@ -22,9 +22,6 @@
         <loc>https://jfhacks.github.io/clients/fladder/</loc>
     </url>
     <url>
-        <loc>https://jfhacks.github.io/clients/jellyfin-desktop/</loc>
-    </url>
-    <url>
         <loc>https://jfhacks.github.io/clients/jellyfin-web/</loc>
     </url>
     <url>
@@ -35,6 +32,9 @@
     </url>
     <url>
         <loc>https://jfhacks.github.io/clients/pelagica/</loc>
+    </url>
+    <url>
+        <loc>https://jfhacks.github.io/clients/streamyfin/</loc>
     </url>
     <url>
         <loc>https://jfhacks.github.io/schema/</loc>
